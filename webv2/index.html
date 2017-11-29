@@ -23,7 +23,7 @@
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <img src="./images/logo/logo_no_text_small.png"/><a class="navbar-brand" href="index.html">Park Hill</a>
+        <img src="./images/logo/logo_no_text_small.png"/ height="40px"><a class="navbar-brand" href="index.html">Park Hill</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -32,15 +32,9 @@
             <li class="nav-item">
               <a class="nav-link" href="neighbourhood.html">Neighbourhood</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="services.html">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Portfolio
+                Condos
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
                 <a class="dropdown-item" href="portfolio-1-col.html">1 Column Portfolio</a>
@@ -51,26 +45,26 @@
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Blog
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Townhomes
               </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                <a class="dropdown-item" href="blog-home-1.html">Blog Home 1</a>
-                <a class="dropdown-item" href="blog-home-2.html">Blog Home 2</a>
-                <a class="dropdown-item" href="blog-post.html">Blog Post</a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                <a class="dropdown-item" href="portfolio-1-col.html">1 Column Portfolio</a>
+                <a class="dropdown-item" href="portfolio-2-col.html">2 Column Portfolio</a>
+                <a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
+                <a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
+                <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
               </div>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Other Pages
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                <a class="dropdown-item" href="full-width.html">Full Width Page</a>
-                <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
-                <a class="dropdown-item" href="faq.html">FAQ</a>
-                <a class="dropdown-item" href="404.html">404</a>
-                <a class="dropdown-item" href="pricing.html">Pricing Table</a>
-              </div>
+            <li class="nav-item">
+              <a class="nav-link" href="builder.html">Builder</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="builder.html">Team</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="register.html">Register</a>
             </li>
           </ul>
         </div>
@@ -100,7 +94,13 @@
             </div>
           </div>
           <!-- Slide Three - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
+          <div class="carousel-item" style="background-image: url('./images/landing/landing3.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Third Slide</h3>
+              <p>This is a description for the third slide.</p>
+            </div>
+          </div>
+		  <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
             <div class="carousel-caption d-none d-md-block">
               <h3>Third Slide</h3>
               <p>This is a description for the third slide.</p>
@@ -274,7 +274,27 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+		<div class="row text-white">
+			<div class="col-lg-6">
+			  <ul class="list-unstyled mb-0">
+				<li>
+					<a href="mailto:info@liveatparkhill.ca?Subject=Park%20Hill%20inquiry" class="text-white" title="Email us">info@liveatparkhill.ca</a>
+				</li>
+				<li>
+				  20087 68 Avenue, Township of Langley, BC
+				</li>
+			  </ul>
+			</div>
+			<div class="col-lg-6">
+			  <ul class="list-unstyled mb-0">
+				<li>
+				 <img src="./images/logo/logo_hor_txt_w.png" height="100px"/>
+				</li>
+			  </ul>
+			</div>
+		  </div>	  
+		<hr/>
+        <p class="m-0 text-center text-white footer-subtext">The developer reserves the right to make changes, modifications or substitutions to the building design, specifications, and floor plans should they be necessary. Final floor plans may be a mirror image of the floor plans shown. Square footage and room sizes are based on the preliminary survey measurements. Sizes are approximate and actual square footage may vary from the final survey and architectural drawings. E.&O.E.</p>
       </div>
       <!-- /.container -->
     </footer>
