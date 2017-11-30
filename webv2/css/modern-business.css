@@ -51,6 +51,12 @@ a.bg-dark:focus, a.bg-dark:hover {
   border-top: 1px solid rgb(202, 245, 233);
 }
 
+.breadcrumb {
+  background-color: rgb(240, 252, 248);
+  border-bottom: 1px solid rgb(202, 245, 233);
+
+}
+
 .btn-primary {
   background-color: rgb(102, 208, 227);
   border-color: rgb(102, 208, 227);
@@ -59,7 +65,16 @@ a.bg-dark:focus, a.bg-dark:hover {
 .btn-primary:hover {
   background-color: rgb(40, 183, 213);
   border-color: rgb(40, 183, 213);
+}
 
+.btn-secondary {
+  background-color: rgb(102, 208, 227);
+  border-color: rgb(102, 208, 227);
+}
+
+.btn-secondary:hover {
+  background-color: rgb(40, 183, 213);
+  border-color: rgb(40, 183, 213);
 }
 
 .footer-subtext {
