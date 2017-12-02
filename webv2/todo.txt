@@ -3,9 +3,5 @@
 Other TODOs
 
 - Footer with basic contact info, facebook link?
-- Google analytics
-- Spark integration
 - fav.ico
-- shrink top logo to fit in to nav bar?
-- get top image with more buffer up top
 
