@@ -204,6 +204,7 @@
   <input type="text" name="are_you_simulated" id="are_you_simulated" placeholder="Leave this field blank"  />
 </div>
 <script>
+/*
 function recaptchaCallback() {
     $('#submit-btn').removeAttr('disabled');
 };
@@ -223,15 +224,6 @@ function recaptchaCallback() {
       alert("Invalid email address");
       return (false);
     }
-	/*
-	var requiredFields = ["contact_email", "answers_3992", "answers_3995", "answers_3996"];
-	for (var j = 0; j < requiredFields.length; j++) {
-		var inputVal = document.getElementById(requiredFields[j]).value;
-		if(inputVal === "")
-		alert("Invalid email address");
-		return (false);
-	}*/
-	
 
     jQuery.each(required, function(id, msg) {
       if (jQuery('[id^="'+ id+ '"]').length && !jQuery('[id^="'+ id+ '"]:checkbox, [id^="'+ id+ '"]:radio').is(':checked') && !jQuery('input[id="'+ id+ '"]:not(:checkbox, :radio), textarea#'+ id).val() && !jQuery('select#'+ id+ ', input#'+ id+ '_other_text').val()) missing += '- '+ msg+ '\r\n';
@@ -247,7 +239,7 @@ function recaptchaCallback() {
   }
   window.onload = function() {
     document.getElementById('are_you_simulated').style.display = 'none';
-  }
+  }*/
 </script>
 
 </form>
@@ -314,6 +306,7 @@ function recaptchaCallback() {
     <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/contact_me.js"></script>
+	<script src="js/recaptcha.js"></script>
 
   </body>
 
