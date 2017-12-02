@@ -69,6 +69,18 @@ a.bg-dark:focus, a.bg-dark:hover {
   border-color: rgb(40, 183, 213);
 }
 
+.btn-primary:disabled {
+  color: graytext;
+  background-color: buttonface;
+  border-color: buttonface;
+}
+
+.btn-primary:disabled:hover {
+  color: graytext;
+  background-color: buttonface;
+  border-color: buttonface;
+}
+
 .btn-secondary {
   background-color: rgb(102, 208, 227);
   border-color: rgb(102, 208, 227);
