@@ -6,7 +6,9 @@
 
 body {
   padding-top: 54px;
+  
 }
+
 
 @media (min-width: 992px) {
   body {
@@ -80,3 +82,25 @@ a.bg-dark:focus, a.bg-dark:hover {
 .footer-subtext {
   font-size: 60%;
 }
+
+.navbar-brand {
+  letter-spacing: .2em;
+  font-family: Open Sans,sans-serif;
+}
+
+.form-control {
+  margin-bottom: 20px;
+}
+
+.form-spacing {
+  margin-bottom: 20px;
+}
+
+
+.form-group label {
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+

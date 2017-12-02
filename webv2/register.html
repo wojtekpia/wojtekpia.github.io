@@ -96,99 +96,113 @@
         <li class="breadcrumb-item active">Register</li>
       </ol>
 
-      
+		<p class="text-center">Register to receive priority viewing, exclusive development updates and information about Park Hill and Langley.</p>
+
 <div class=" form-home content-section">
 	<div class="container">
-		<div class="row">
-			<div class="col-sm-12">
+		<div class="row justify-content-center">
+			<div class="col-sm-6">
 				<div class="max-width">
 					<script src='https://www.google.com/recaptcha/api.js'></script>
-<form id="register-form" action="https://spark.re/forewest-construction/park-hill/register/website-registration-form" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
-<div class="grid">
+					
+<form id="register-form" action="https://spark.re/forewest-construction/park-hill/register/website-registration-form" accept-charset="UTF-8" method="post">
+<input name="utf8" type="hidden" value="&#x2713;" />
+<div class="grid control-group form-group">
   <div class="form-item">
-    <label for="contact_first_name">First Name</label>
-    <input type="text" name="contact[first_name]" id="contact_first_name" />
+    <label for="contact_first_name">First Name:</label>
+    <input type="text" class="form-control" name="contact[first_name]" id="contact_first_name" />
+  </div>
+  
+  <div class="form-item">
+    <label for="contact_last_name">Last Name:</label>
+    <input type="text" class="form-control" name="contact[last_name]" id="contact_last_name" />
   </div>
 
   <div class="form-item">
-    <label for="contact_last_name">Last Name</label>
-    <input type="text" name="contact[last_name]" id="contact_last_name" />
+    <label for="contact_email">Email: *</label>
+    <input type="email" class="form-control" name="contact[email]" id="contact_email" required data-validation-required-message="Please enter your email address." />
   </div>
 
   <div class="form-item">
-    <label for="contact_email">Email *</label>
-    <input type="email" name="contact[email]" id="contact_email" />
-  </div>
-
-  <div class="form-item">
-    <label for="contact_phone">Phone</label>
-    <input type="tel" name="contact[phone]" id="contact_phone" />
+    <label for="contact_phone">Phone:</label>
+    <input type="tel" class="form-control" name="contact[phone]" id="contact_phone" />
   </div>
 
     <div class="col-xs-12">
-      <div class="dropdown-wrapper answer">
-        <label for="contact_contact_preference">Contact Preference</label>
-        <select name="contact[contact_preference]" id="contact_contact_preference"><option value="Any">Any</option>
-<option value="Email">Email</option>
-<option value="Phone">Phone</option>
-<option value="Agent">Agent</option>
-<option value="Text Message">Text Message</option></select>
+      <div>
+        <label for="contact_contact_preference">Contact Preference:</label>
+        <select name="contact[contact_preference]" class="form-control" id="contact_contact_preference"><option value="Any">Any</option>
+          <option value="Email">Email</option>
+          <option value="Phone">Phone</option>
+          <option value="Agent">Agent</option>
+          <option value="Text Message">Text Message</option></select>
       </div>
     </div>
-</div>
-
-<div class='answers row'>
-<label for="Where_did_you_hear_about_us___">Where did you hear about us? *</label>
-<div class='dropdown-wrapper'>
-<div class="answer"><select name="answers[3992][answers]" id="answers_3992" class="false"><option value="">Select</option><option value="Newspaper">Newspaper</option>
-<option value="Internet Search">Internet Search</option>
-<option value="Realtor">Realtor</option>
-<option value="Facebook">Facebook</option>
-<option value="Twitter">Twitter</option>
-<option value="Friend/Family">Friend/Family</option>
-<option value="Signs">Signs</option>
-<option value="Other ">Other </option></select></div>
-</div>
-</div>
-<div class='answers row'>
-<label for="Are_you_working_with_a_Realtor__">Are you working with a realtor *</label>
-<div class='dropdown-wrapper'>
-<div class="answer"><select name="answers[3995][answers]" id="answers_3995" class="false"><option value="">Select</option><option value="Yes">Yes</option>
-<option value="No">No</option></select></div>
-</div>
-</div>
-<div class='answers row'>
-<label for="Yes__I_agree_to_receive_email_updates_from_Park_Hill__">Yes, i agree to receive email updates from park hill *</label>
-<div class='dropdown-wrapper'>
-<div class="answer"><select name="answers[3996][answers]" id="answers_3996" class="false"><option value="">Select</option><option value="Yes">Yes</option></select></div>
-</div>
-</div>
 
 
-<div class="answers row">
-  <div class="multi-wrapper">
-    <div class="answer checkbox">
-      <input id="agent" name="agent" type="checkbox" value="true">
-      <label for="agent">
-        <span>Are you an agent? </span>
-      </label>
+  <div class="col-xs-12">
+    <label for="Where_did_you_hear_about_us___">Where did you hear about us? *</label>
+    <div>
+    <div><select name="answers[3992][answers]" class="form-control" id="answers_3992">
+	  <option value="">Select</option>
+	  <option value="Newspaper">Newspaper</option>
+      <option value="Internet Search">Internet Search</option>
+      <option value="Realtor">Realtor</option>
+      <option value="Facebook">Facebook</option>
+      <option value="Twitter">Twitter</option>
+      <option value="Friend/Family">Friend/Family</option>
+      <option value="Signs">Signs</option>
+      <option value="Other ">Other </option></select></div>
     </div>
   </div>
-</div>
+  
+  <div class="col-xs-12">
+    <label for="Are_you_working_with_a_Realtor__">Are you working with a realtor *</label>
+    <div>
+      <div><select name="answers[3995][answers]" id="answers_3995" class="form-control">
+	    <option value="">Select</option>
+		<option value="Yes">Yes</option>
+		<option value="No">No</option></select>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-xs-12">
+    <label for="Yes__I_agree_to_receive_email_updates_from_Park_Hill__">Yes, i agree to receive email updates from park hill *</label>
+    <div>
+      <div><select name="answers[3996][answers]" class="form-control" id="answers_3996">
+	    <option value="">Select</option>
+		<option value="Yes">Yes</option></select>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-12">
+    <div>
+      <div class="form-spacing">
+        <input id="agent" name="agent" type="checkbox" value="true">
+        <label for="agent">
+          <span>Are you an agent? </span>
+        </label>
+      </div>
+    </div>
+  </div>
 
   <div class="form-item">
     <label for="contact_comments">Comments or Questions</label>
-    <textarea placeholder="Additional comments or questions" rows="5" class="ignore" data-enhance="false" name="contact[comments]" id="contact_comments">
-</textarea>
+    <textarea placeholder="Additional comments or questions" rows="5" class="form-control" data-enhance="false" name="contact[comments]" id="contact_comments">
+    </textarea>
   </div>
+  
   <div class="g-recaptcha" data-sitekey="6Le27zAUAAAAAO4AOqsOKAkXV_azlXmWEX3KG-i3" data-callback="recaptchaCallback"></div>
-<div class="btn-wrap center">
-  <button onclick="submitRegistrationForm(this);" class="g-recaptcha button submit btn" href="javascript:void(0);" disabled id="submit-btn">Register with Park Hill</button>
+  <div class="btn-wrap center">
+    <button onclick="submitRegistrationForm(this);" class="g-recaptcha button submit btn" href="javascript:void(0);" disabled id="submit-btn">Register with Park Hill</button>
+  </div>
+  <input type="hidden" name="source" id="source" value="website" />
+  <input type="hidden" name="redirect_success" id="redirect_success" value="https://wojtekpia.github.io/thank-you" />
+  <input type="hidden" name="redirect_error" id="redirect_error" value="https://liveatparkhill.ca/" />
+  <input type="text" name="are_you_simulated" id="are_you_simulated" placeholder="Leave this field blank" />
 </div>
-<input type="hidden" name="source" id="source" value="website" />
-<input type="hidden" name="redirect_success" id="redirect_success" value="https://wojtekpia.github.io/thank-you" />
-<input type="hidden" name="redirect_error" id="redirect_error" value="https://liveatparkhill.ca/" />
-<input type="text" name="are_you_simulated" id="are_you_simulated" placeholder="Leave this field blank" />
 <script>
 function recaptchaCallback() {
     $('#submit-btn').removeAttr('disabled');
@@ -223,45 +237,20 @@ function recaptchaCallback() {
   }
 </script>
 
-</form>				</div>
-			</div>
-		</div>
-	</div>
-</div>
+</form>
+		  </div>
+        </div>
+      </div>
+    </div>
+  </div>
 	  
 	  
       <!-- Contact Form -->
       <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
       <div class="row">
         <div class="col-lg-8 mb-4">
-          <h3>Send us a Message</h3>
           <form name="sentMessage" id="contactForm" novalidate>
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>Full Name:</label>
-                <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
-                <p class="help-block"></p>
-              </div>
-            </div>
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>Phone Number:</label>
-                <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
-              </div>
-            </div>
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>Email Address:</label>
-                <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
-              </div>
-            </div>
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>Message:</label>
-                <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
-              </div>
-            </div>
-            <div id="success"></div>
+            
             <!-- For success/fail messages -->
             <button type="submit" class="btn btn-primary" id="sendMessageButton">Send Message</button>
           </form>
