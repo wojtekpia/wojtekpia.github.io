@@ -143,7 +143,7 @@
   <div class="col-xs-12">
     <label for="Where_did_you_hear_about_us___">Where did you hear about us? *</label>
     <div>
-    <div><select name="answers[3992][answers]" class="form-control" id="answers_3992">
+    <div><select name="answers[3992][answers]" class="form-control" required id="answers_3992">
 	  <option value="">Select</option>
 	  <option value="Newspaper">Newspaper</option>
       <option value="Internet Search">Internet Search</option>
@@ -159,7 +159,7 @@
   <div class="col-xs-12">
     <label for="Are_you_working_with_a_Realtor__">Are you working with a realtor *</label>
     <div>
-      <div><select name="answers[3995][answers]" id="answers_3995" class="form-control">
+      <div><select name="answers[3995][answers]" id="answers_3995" required class="form-control">
 	    <option value="">Select</option>
 		<option value="Yes">Yes</option>
 		<option value="No">No</option></select>
@@ -170,7 +170,7 @@
   <div class="col-xs-12">
     <label for="Yes__I_agree_to_receive_email_updates_from_Park_Hill__">Yes, i agree to receive email updates from park hill *</label>
     <div>
-      <div><select name="answers[3996][answers]" class="form-control" id="answers_3996">
+      <div><select name="answers[3996][answers]" class="form-control" required id="answers_3996">
 	    <option value="">Select</option>
 		<option value="Yes">Yes</option></select>
       </div>
@@ -218,18 +218,31 @@ function recaptchaCallback() {
     var questions = {answers_3992: 'Where did you hear about us?', answers_3995: 'Are you working with a Realtor', answers_3996: 'Yes, I agree to receive email updates from Park Hill'}
     required = jQuery.extend(required, customRequired, questions);
 
-    email = document.getElementById("contact_email").value;
+    var email = document.getElementById("contact_email").value;
     if (!/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/.test(email))  {
       alert("Invalid email address");
       return (false);
     }
+	/*
+	var requiredFields = ["contact_email", "answers_3992", "answers_3995", "answers_3996"];
+	for (var j = 0; j < requiredFields.length; j++) {
+		var inputVal = document.getElementById(requiredFields[j]).value;
+		if(inputVal === "")
+		alert("Invalid email address");
+		return (false);
+	}*/
+	
 
     jQuery.each(required, function(id, msg) {
       if (jQuery('[id^="'+ id+ '"]').length && !jQuery('[id^="'+ id+ '"]:checkbox, [id^="'+ id+ '"]:radio').is(':checked') && !jQuery('input[id="'+ id+ '"]:not(:checkbox, :radio), textarea#'+ id).val() && !jQuery('select#'+ id+ ', input#'+ id+ '_other_text').val()) missing += '- '+ msg+ '\r\n';
     });
-    if (missing != '') { alert('The following fields are required:\r\n'+ missing); return (false); }
-    $element.closest('form').submit(function() { element.onclick = null; });
-    $element.closest('form').submit();
+    if (missing != '') { 
+		alert('The following fields are required:\r\n'+ missing); return (false); 
+	}
+	else {
+		$element.closest('form').submit(function() { element.onclick = null; });
+		$element.closest('form').submit();
+	}
 
   }
   window.onload = function() {
