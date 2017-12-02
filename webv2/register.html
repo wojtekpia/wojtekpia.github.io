@@ -227,7 +227,7 @@ function recaptchaCallback() {
     jQuery.each(required, function(id, msg) {
       if (jQuery('[id^="'+ id+ '"]').length && !jQuery('[id^="'+ id+ '"]:checkbox, [id^="'+ id+ '"]:radio').is(':checked') && !jQuery('input[id="'+ id+ '"]:not(:checkbox, :radio), textarea#'+ id).val() && !jQuery('select#'+ id+ ', input#'+ id+ '_other_text').val()) missing += '- '+ msg+ '\r\n';
     });
-    if (missing != '') { alert('The following fields are required:\r\n'+ missing); return false; }
+    if (missing != '') { alert('The following fields are required:\r\n'+ missing); return (false); }
     $element.closest('form').submit(function() { element.onclick = null; });
     $element.closest('form').submit();
 
@@ -244,20 +244,6 @@ function recaptchaCallback() {
     </div>
   </div>
 	  
-	  
-      <!-- Contact Form -->
-      <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-      <div class="row">
-        <div class="col-lg-8 mb-4">
-          <form name="sentMessage" id="contactForm" novalidate>
-            
-            <!-- For success/fail messages -->
-            <button type="submit" class="btn btn-primary" id="sendMessageButton">Send Message</button>
-          </form>
-        </div>
-
-      </div>
-      <!-- /.row -->
 
     </div>
     <!-- /.container -->
