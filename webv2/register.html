@@ -196,12 +196,12 @@
   
   <div class="g-recaptcha" data-sitekey="6Le27zAUAAAAAO4AOqsOKAkXV_azlXmWEX3KG-i3" data-callback="recaptchaCallback"></div>
   <div class="btn-wrap center">
-    <button onclick="submitRegistrationForm(this);" class="g-recaptcha button submit btn" href="javascript:void(0);" disabled id="submit-btn">Register with Park Hill</button>
+    <button onclick="submitRegistrationForm(this);" class="g-recaptcha button btn btn-primary" href="javascript:void(0);" disabled id="submit-btn">Register with Park Hill</button>
   </div>
   <input type="hidden" name="source" id="source" value="website" />
-  <input type="hidden" name="redirect_success" id="redirect_success" value="https://wojtekpia.github.io/thank-you" />
-  <input type="hidden" name="redirect_error" id="redirect_error" value="https://liveatparkhill.ca/" />
-  <input type="text" name="are_you_simulated" id="are_you_simulated" placeholder="Leave this field blank" />
+  <input type="hidden" name="redirect_success" id="redirect_success" value="http://www.liveatparkhill.ca/webv2/thankyou.html" />
+  <input type="hidden" name="redirect_error" id="redirect_error" value="http://www.liveatparkhill.ca/register.html" />
+  <input type="text" name="are_you_simulated" id="are_you_simulated" placeholder="Leave this field blank"  />
 </div>
 <script>
 function recaptchaCallback() {

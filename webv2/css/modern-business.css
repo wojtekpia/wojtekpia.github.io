@@ -103,4 +103,14 @@ a.bg-dark:focus, a.bg-dark:hover {
   margin-bottom: 3px;
 }
 
+a {
+  color: #0056b3;
+}
+
+a:hover {
+  color: rgb(0, 69, 145);
+
+}
+
+
 
