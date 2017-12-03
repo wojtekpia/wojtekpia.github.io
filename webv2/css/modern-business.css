@@ -64,6 +64,18 @@ a.bg-dark:focus, a.bg-dark:hover {
   border-color: rgb(102, 208, 227);
 }
 
+.btn-white {
+  color: #212529;
+  background-color: rgba(255,255,255,.8);
+  border-color: rgba(255,255,255,.8);
+}
+
+.btn-white:hover {
+  color: #212529;
+  background-color: rgba(255,255,255,.5);
+  border-color: rgba(255,255,255,.5);
+}
+
 .btn-primary:hover {
   background-color: rgb(40, 183, 213);
   border-color: rgb(40, 183, 213);
