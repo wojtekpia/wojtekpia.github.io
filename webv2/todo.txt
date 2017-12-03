@@ -3,5 +3,5 @@
 Other TODOs
 
 - Footer with basic contact info, facebook link?
-- fav.ico
+
 
