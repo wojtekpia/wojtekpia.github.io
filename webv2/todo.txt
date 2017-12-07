@@ -1,4 +1,0 @@
-- Footer with basic contact info, facebook link?
-- Enlarge plan photos on click?
-- header/foot size mismatch on mobile
-- plush carpet on condos.

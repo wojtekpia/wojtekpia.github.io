@@ -1,0 +1,12 @@
+Nameserver
+ns1.pantek.com
+ns2.pantek.com
+ns3.pantek.com
+
+104.36.48.241
+
+
+TODO:
+- add title
+- add analytics
+- remove extra links

@@ -1,12 +1,4 @@
-Nameserver
-ns1.pantek.com
-ns2.pantek.com
-ns3.pantek.com
-
-104.36.48.241
-
-
-TODO:
-- add title
-- add analytics
-- remove extra links
+- Footer with basic contact info, facebook link?
+- Enlarge plan photos on click?
+- header/foot size mismatch on mobile
+- plush carpet on condos.
