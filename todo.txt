@@ -1,4 +1,2 @@
-- fix 404
-- upload site map to google
 - Footer with basic contact info, facebook link?
 - Enlarge plan photos on click?
