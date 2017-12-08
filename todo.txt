@@ -1,5 +1,3 @@
 - Footer with basic contact info, facebook link?
 - Enlarge plan photos on click?
 
-- price update
-- condo page
