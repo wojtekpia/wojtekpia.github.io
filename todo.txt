@@ -1,4 +1,6 @@
 - Footer with basic contact info, facebook link?
 - Enlarge plan photos on click?
 
-- generate sitemap
+https://github.com/dwyl/html-form-send-email-via-google-script-without-server
+
+
