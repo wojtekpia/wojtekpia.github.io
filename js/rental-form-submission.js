@@ -1,4 +1,9 @@
 
+function recaptchaCallback() {
+    $('#submit-btn').removeAttr('disabled');
+};
+
+
 function validEmail(email) { // see:
   var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
   return re.test(email);
@@ -92,10 +97,6 @@ function handleFormSubmit(event) {  // handles form submit withtout any jquery
     xhr.send(encoded);
   }
 }
-
-function recaptchaCallback() {
-    $('#submit-btn').removeAttr('disabled');
-};
 
 
 function loaded() {
