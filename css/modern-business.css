@@ -166,3 +166,7 @@ a:hover {
 
 }
 
+.double-spacing {
+	letter-spacing:.2em;
+}
+
