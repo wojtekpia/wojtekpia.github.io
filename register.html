@@ -90,7 +90,6 @@
         <li class="breadcrumb-item active">Register</li>
       </ol>
 
-		<p class="text-center">Register to receive priority viewing, exclusive development updates and information about Park Hill and Langley.</p>
 
 <div class=" form-home content-section">
 	<div class="container">
@@ -98,118 +97,107 @@
 			<div class="col-sm-6">
 				<div class="max-width">
 					<script src='https://www.google.com/recaptcha/api.js'></script>
-					
-<form id="register-form" action="https://spark.re/forewest-construction/park-hill/register/website-registration-form" accept-charset="UTF-8" method="post">
-<input name="utf8" type="hidden" value="&#x2713;" />
-<div class="grid control-group form-group">
-  <div class="form-item">
-    <label for="contact_first_name">First Name:</label>
-    <input type="text" class="form-control" name="contact[first_name]" id="contact_first_name" />
-  </div>
-  
-  <div class="form-item">
-    <label for="contact_last_name">Last Name:</label>
-    <input type="text" class="form-control" name="contact[last_name]" id="contact_last_name" />
-  </div>
+  <form id="gform" method="POST" action="https://script.google.com/macros/s/AKfycbyGPjqlT8dtwYEpzTxEgnflhfniSdzhB5PwQXTrNQUmA-mjlBI/exec">
+		<p class="text-center">Register to receive priority viewing, exclusive development updates and information about Park Hill and Langley.</p>
 
-  <div class="form-item">
-    <label for="contact_email">Email: *</label>
-    <input type="email" class="form-control" name="contact[email]" id="contact_email" required data-validation-required-message="Please enter your email address." />
-  </div>
+  <!-- change the form action to your script url -->
+	<div class="grid control-group form-group">
+	  <div class="form-item">
+		<label for="firstname">First Name:</label>
+		<input type="text" class="form-control" name="firstname" id="firstname" />
+	  </div>
 
-  <div class="form-item">
-    <label for="contact_phone">Phone:</label>
-    <input type="tel" class="form-control" name="contact[phone]" id="contact_phone" />
-  </div>
+	  <div class="form-item">
+		<label for="lastname">Last Name:</label>
+		<input type="text" class="form-control" name="lastname" id="lastname" />
+	  </div>
 
-    <div class="col-xs-12">
-      <div>
-        <label for="contact_contact_preference">Contact Preference:</label>
-        <select name="contact[contact_preference]" class="form-control" id="contact_contact_preference"><option value="Any">Any</option>
+	  <div class="form-item">
+		<label for="email">Email:</label>
+		<input type="email" class="form-control" name="email" id="email" required data-validation-required-message="Please enter your email address." />
+	  </div>
+
+	  <div class="form-item">
+		<label for="phone">Phone:</label>
+		<input type="tel" class="form-control" name="phone" id="phone" />
+	  </div>
+
+	  <div class="form-item">
+		<label for="contactpreference">Contact Preference:</label>
+		<select name="contactpreference" class="form-control" id="contactpreference">
+		  <option value="Any">Any</option>
           <option value="Email">Email</option>
           <option value="Phone">Phone</option>
           <option value="Agent">Agent</option>
-          <option value="Text Message">Text Message</option></select>
-      </div>
-    </div>
+          <option value="Text Message">Text Message</option>
+		</select>
+	  </div>
 
+	  <div class="form-item">
+		<label for="source">Where did you hear about us? *</label>
+		<select name="source" class="form-control" required id="source">
+		  <option value="">Select</option>
+		  <option value="Newspaper">Newspaper</option>
+		  <option value="Internet Search">Internet Search</option>
+		  <option value="Realtor">Realtor</option>
+		  <option value="Facebook">Facebook</option>
+		  <option value="Twitter">Twitter</option>
+		  <option value="Friend/Family">Friend/Family</option>
+		  <option value="Signs">Signs</option>
+		  <option value="Other ">Other </option>
+	    </select>
+	  </div>
 
-  <div class="col-xs-12">
-    <label for="Where_did_you_hear_about_us___">Where did you hear about us? *</label>
-    <div>
-    <div><select name="answers[3992][answers]" class="form-control" required id="answers_3992">
-	  <option value="">Select</option>
-	  <option value="Newspaper">Newspaper</option>
-      <option value="Internet Search">Internet Search</option>
-      <option value="Realtor">Realtor</option>
-      <option value="Facebook">Facebook</option>
-      <option value="Twitter">Twitter</option>
-      <option value="Friend/Family">Friend/Family</option>
-      <option value="Signs">Signs</option>
-      <option value="Other ">Other </option></select></div>
-    </div>
-  </div>
-  
-  <div class="col-xs-12">
-    <label for="Are_you_working_with_a_Realtor__">Are you working with a realtor *</label>
-    <div>
-      <div><select name="answers[3995][answers]" id="answers_3995" required class="form-control">
-	    <option value="">Select</option>
-		<option value="Yes">Yes</option>
-		<option value="No">No</option></select>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-xs-12">
-    <label for="Yes__I_agree_to_receive_email_updates_from_Park_Hill__">Yes, i agree to receive email updates from park hill *</label>
-    <div>
-      <div><select name="answers[3996][answers]" class="form-control" required id="answers_3996">
-	    <option value="">Select</option>
-		<option value="Yes">Yes</option></select>
-      </div>
-    </div>
-  </div>
+	  <div class="form-item">
+		<label for="workingwithrealtor">Are you working with a realtor? *</label>
+		<select name="workingwithrealtor" class="form-control" required id="workingwithrealtor">
+		  <option value="">Select</option>
+		  <option value="Yes">Yes</option>
+		  <option value="No">No</option>
+	    </select>
+	  </div>
 
-  <div class="col-xs-12">
-    <div>
-      <div class="form-spacing">
-        <input id="agent" name="agent" type="checkbox" value="true">
+	  <div class="form-item">
+		<label for="emailsignup">Yes, i agree to receive email updates from park hill*</label>
+		<select name="emailsignup" class="form-control" required id="emailsignup">
+		  <option value="">Select</option>
+		  <option value="Yes">Yes</option>
+	    </select>
+	  </div>
+
+	  <div class="form-item">
+	    <input id="agent" name="agent" type="checkbox" value="true">
         <label for="agent">
           <span>Are you an agent? </span>
         </label>
-      </div>
-    </div>
-  </div>
+	  </div>
 
-  <div class="col-xs-12">
-    <div>
-      <div class="form-spacing">
+	  <div class="form-item">
         <label>
-          <span style="text-transform:none">The information you provide will be used by Sheena Reimer PREC and Forewest Group to help enhance your home buying experience. As licensed Realtors with Homelife Benchmark Realty we cannot provide representation to buyers of Park Hill. For more details about Realtor representation please follow <a href="https://s3.amazonaws.com/assets.allur.com/uploads/material/upload/fc2714dfbe523fd4c1a826c32235609f/RECBC_-_Realtor_Representation_Forms.pdf">this link</a>. </span>
+          <span style="text-transform:none">The information you provide will be used by Sheena Reimer PREC and Forewest Group to help enhance your home buying experience. As licensed Realtors with Homelife Benchmark Realty we cannot provide representation to buyers of Park Hill. For more details about Realtor representation please follow <a href="https://s3.amazonaws.com/assets.allur.com/uploads/material/upload/fc2714dfbe523fd4c1a826c32235609f/RECBC_-_Realtor_Representation_Forms.pdf">this link</a>.</span>
         </label>
       </div>
-    </div>
+
+
+
+	  <div class="g-recaptcha" data-sitekey="6Le27zAUAAAAAO4AOqsOKAkXV_azlXmWEX3KG-i3" data-callback="recaptchaCallback"></div>
+	  <div class="btn-wrap center">
+		<button class="g-recaptcha button btn btn-primary" href="javascript:void(0);" disabled id="submit-btn">Register with Park Hill</button>
+	  </div>
+	  <input type="hidden" name="source" id="source" value="website" />
+	  <input type="hidden" name="redirect_success" id="redirect_success" value="http://www.liveatparkhill.ca/thankyou.html" />
+	  <input type="hidden" name="redirect_error" id="redirect_error" value="http://www.liveatparkhill.ca/register.html" />
+	  <input type="text" name="are_you_simulated" id="are_you_simulated" placeholder="Leave this field blank" style="display:none" />
+	</div>
+  </form>
+  
+    <div style="display:none;" id="thankyou_message">
+    <h2><em>Thanks</em> for contacting us!
+      We will get back to you soon!</h2>
   </div>
 
   
-  <div class="form-item">
-    <label for="contact_comments">Comments or Questions</label>
-    <textarea placeholder="Additional comments or questions" rows="5" class="form-control" data-enhance="false" name="contact[comments]" id="contact_comments">
-    </textarea>
-  </div>
   
-  <div class="g-recaptcha" data-sitekey="6Le27zAUAAAAAO4AOqsOKAkXV_azlXmWEX3KG-i3" data-callback="recaptchaCallback"></div>
-  <div class="btn-wrap center">
-    <button onclick="submitRegistrationForm(this);" class="g-recaptcha button btn btn-primary" href="javascript:void(0);" disabled id="submit-btn">Register with Park Hill</button>
-  </div>
-  <input type="hidden" name="source" id="source" value="website" />
-  <input type="hidden" name="redirect_success" id="redirect_success" value="http://www.liveatparkhill.ca/thankyou.html" />
-  <input type="hidden" name="redirect_error" id="redirect_error" value="http://www.liveatparkhill.ca/register.html" />
-  <input type="text" name="are_you_simulated" id="are_you_simulated" placeholder="Leave this field blank" style="display:none" />
-</div>
-
-</form>
 		  </div>
         </div>
       </div>
@@ -269,29 +257,9 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Contact form JavaScript -->
-    <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
     <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-	<script src="js/recaptcha.js"></script>
+	<script src="js/rental-form-submission.js"></script>
 
-	<script>
-	function getParameterByName(name, url) {
-		if (!url) url = window.location.href;
-		name = name.replace(/[\[\]]/g, '\\$&');
-		var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-			results = regex.exec(url);
-		if (!results) return null;
-		if (!results[2]) return '';
-		return decodeURIComponent(results[2].replace(/\+/g, ' '));
-	}
-	
-	var ref = getParameterByName('ref');
-	if(ref === "grand-opening")
-	{
-		document.getElementById("contact_comments").value = "I am interested in the Showhome Grand Opening.";
-	}
-	</script>
-	
   </body>
 
 </html>
