@@ -1,1 +1,1 @@
-powershell -noexit "& "".\sitemap.ps1"""
+powershell -ExecutionPolicy Bypass -noexit "& "".\sitemap.ps1"""

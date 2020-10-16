@@ -1,1 +1,1 @@
-powershell -noexit "& "".\build.ps1"""
+powershell -ExecutionPolicy Bypass -noexit "& "".\build.ps1"""
