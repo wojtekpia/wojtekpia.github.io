@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NewRecruit</title>
+</head>
+<body>
+
+<h1>Local Jobs and Entrepeneurship</h1>
+<p>Paragraph goes here</p>
+
+</body>
+</html>

@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NewRecruit</title>
+<style>
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px; /* top offset */
+}
+
+</style>
+</head>
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+body {
+    font-family:"Poppins";
+    font-size: 20px;
+}
+
+.header {
+  font-size: 250%;
+  margin-left: 20px;
+  margin: 10px;
+  margin-bottom: 0px;
+}
+
+.subheader {
+  font-size: 100%;
+  margin-left: 100px;
+  margin: 10px;
+  margin-top: 0px;
+}
+
+/* Style the navbar */
+#navbar {
+  overflow: hidden;
+  background-color: #333;
+  z-index: 100;
+}
+
+/* Navbar links */
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 24px;
+  padding-left: 50px;
+  text-decoration: none;
+  font-size: 150%;
+}
+
+.navbartitle { /* this is overwritten by navbar. figure out how to make this work. */
+  font-size: 250%;
+}
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+
+.welcomecontentbackground {
+  width:100%;
+  height:75vh;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+
+}
+
+.welcomecontentbackground::before {
+  content: "";
+  background-image: url('images/westend2.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.75;
+}
+
+.welcomecontent {
+  /* TODO: don't like how this moves when window is resized*/
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  height: 60%;
+  font-size:30pt;
+
+}
+
+
+
+.whoitsfor
+{
+  text-align: center;
+}
+
+.whoitsforcontent {
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  vertical-align: middle;
+  font-size: 125%;
+ 
+}
+
+
+.entrepreneurs 
+{ 
+  background-image: url('images/lightarrow.png');
+  background-size: cover;
+  width: 260px;
+  height: 260px;
+  resize: both;
+
+}
+
+.employers 
+{ 
+  background-image: url('images/darkarrow.png');
+  background-size: cover;
+  width: 260px;
+  height: 260px;
+  resize: both;
+
+}
+
+.applicants 
+{ 
+  background-image: url('images/lightarrow.png');
+  background-size: cover;
+  width: 260px;
+  height: 260px;
+  resize: both;
+}
+
+.whoitsforspacer
+{
+  padding-left: 30px;
+  padding-right: 40px;
+  padding-bottom: 350px;
+}
+
+.entrepreneurs:hover span {
+  display: none;
+}
+
+.entrepreneurs:hover:before {
+  content: "Business owners can list and sell their products easily and at no cost.";
+}
+
+.employers:hover span {
+  display: none;
+}
+
+.employers:hover:before {
+  content: "Employers can advertise their job listings to a community of applicants easily and at no cost.";
+}
+
+.applicants:hover span {
+  display: none;
+}
+
+.applicants:hover:before {
+  content: "Job applicants can select desirable listings of interest.";
+}
+
+.connectwithcustomers {
+  background-color: #b9c2c4;
+  table-layout: fixed;
+  padding: 35px;
+  padding-left: 200px;
+
+}
+
+.localmarketplace {
+  background-color: #F8EFDE;
+  table-layout: fixed;
+  padding: 35px;
+  padding-left: 200px;
+
+}
+
+.ourpurposelinks a {
+  border-radius: 12px;
+  text-decoration: none;
+  background: white;
+  padding: 10px;
+  width: fit-content;
+  text-align: center;
+  color: #898989;
+}
+
+.connectwithcustomersmain {
+  width:250px;
+  padding-right:60px;
+}
+
+.ourpurpose {
+  background-color: #3d3d3d;
+  color: white;
+  padding: 50px;
+  width: 500px;
+  vertical-align: top;
+}
+
+.jobsearch {
+  background-color: white;
+  table-layout: fixed;
+  padding: 35px;
+  padding-left: 300px;
+}
+
+.searchinput {
+  background-image: url('images/searchicon.png'); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 50%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+  border-radius: 12px;
+}
+
+.joblist {
+  width: 300px;
+}
+
+#joblist {
+  /* Remove default list styling */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#joblist li span {
+  border: 1px solid #ddd; /* Add a border to all links */
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6; /* Grey background color */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove default text underline */
+  font-size: 125%; /* Increase the font-size */
+  color: black; /* Add a black text color */
+  display: block; /* Make it into a block element to fill the whole list */
+  border-radius: 12px;
+}
+
+#joblist li span:hover:not(.header) {
+  background-color: #eee; /* Add a hover effect to all links, except for headers */
+}
+
+.jobDetailsLogo
+{
+  width:50px;
+}
+
+.jobDetails {
+  width:600px;
+}
+
+.jobDescription {
+  background-color: #C8C8C8;
+  border-bottom-right-radius:12px;
+  border-bottom-left-radius:12px;
+  padding:20px;
+}
+
+.jobDescription ul {
+  list-style-type: none;
+}
+
+.jobDetailsHeader {
+  background-color: #F2E3C6;
+  border-top-right-radius:12px;
+  border-top-left-radius:12px;
+  width: 100%;
+  padding:20px;
+}
+
+.starredImages {
+  width:20px;
+}
+
+.marketplaceProductDetailLogo {
+  width:50px;
+}
+
+.marketplaceitems {
+  list-style-type: none;
+  width:400px;
+}
+
+.marketplaceitems li {
+  float: left;
+}
+
+.productlistimage {
+  width:100px;
+  height:100px;
+  padding-left:10px;
+  padding-right:10px;
+}
+
+.productlisttitle {
+  font-size: 60%;
+  word-wrap: break-word;
+  padding-bottom: 10px;
+  width:100px;
+}
+
+.productDetails {
+  background-color: #f6f6f6;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.marketplaceProductDetailImage {
+  width:500px;
+  justify-content: center;
+  display:inline;
+}
+
+.company {
+  font-size: 75%;
+}
+
+.companyLogo
+{
+  height:20px;
+}
+
+.starredjobname {
+  font-weight: bold;
+}
+
+.starredcompany {
+  font-size: 75%;
+}
+
+#about {
+  padding:50px;
+  text-align: left;
+}
+
+#about th {
+  padding-right:20px;
+}
+
+</style>
+
+
+</head>
+<body>
+
+  <div id="top"></div>
+  <div id="navbar">
+    <a href="#top" class="navbartitle">NewRecruit</a>
+    <a href="#jobs">Jobs</a>
+    <a href="#entrepreneurship">Entrepreneurship</a>
+    <a href="#profile">Profile</a>
+    <a href="#about">About</a>
+  </div>
+
+
+  <div class="welcomecontentbackground">
+    <div class="welcomecontent">Local Jobs and Business</div>
+  </div>
+
+  <div class="whoitsfor">
+    <h1>Who is NewRecruit For?</h1>
+    <table class="whoitsforcontent">
+      <tr>
+        <td>
+          <div class="entrepreneurs"><br><br><br><span>Entrepreneurs</span></div>
+        </td>
+        <td class="whoitsforspacer"></td>
+        <td>
+          <div class="employers"><br><br><br><span>Employers</span></div>
+        </td>
+        <td class="whoitsforspacer"></td>
+        <td>
+          <div class="applicants"><br><br><br><span>Applicants</span></div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="connectwithcustomers">
+    <table>
+      <tr>
+        <td>
+          <div class="connectwithcustomersmain">
+              <img src="images/bag1.png" width="200px"/>
+              <h2>Connect With Customers Near You</h2>
+              <div class="ourpurposelinks"><a href="#profile">Go to Profile</a></div>
+          </div>
+        </td>
+        <td >
+          <table>
+            <tr>
+              <td>
+                <div class="ourpurpose">
+                  <h2>Our Purpose</h2>
+                  NewRecruit is designed to help sellers, buyers, employers, and employees in the Lower Mainland connect transparently at no cost.
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table>
+                  <tr>
+                    <td>
+                      <img src="images/bag2.png" width="200px"/>
+                    </td>
+                    <td>
+                      <h2>Search Local Job Listings</h2>
+                      <div class="ourpurposelinks"> <a href="#jobs">Find Openings</a></div>
+                    </td>
+                  </tr>
+                </table>
+                
+                
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+  <div class="jobsearch" id="jobs">
+    <h2>Job Listings</h2>
+    <input type="text" id="jobsearchinput" onkeyup="filterJobs()" placeholder="Enter Job Name/Description" class="searchinput">
+
+    <table>
+      <tr>
+        <td class="joblist">
+          <ul id="joblist">
+            <li><a href="#">Job1</a></li>
+            <li><a href="#">Job2</a></li>
+          </ul>
+        </td>
+        <td>
+          <div id="jobDetails">
+
+          </div>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+
+<div class="localmarketplace" id="entrepreneurship">
+  <input type="text" id="productsearchinput" onkeyup="filterProducts()" placeholder="Enter Product Name/Description" class="searchinput">
+  <table>
+    <tr>
+      <td>
+        <h2>Local Marketplace</h2>
+        <table>
+          <tr><td>
+              <h3>Popular Right Now</h3>
+          </td></tr>
+          <tr><td>
+            <ul id="popularmarketplaceitems" class="marketplaceitems">
+              <li><a href="#">Job1</a></li>
+              <li><a href="#">Job2</a></li>
+            </ul>
+        </td></tr>
+        <tr><td>
+          <h3>Explore Local Products</h3>
+        </td></tr>
+        <tr><td>
+          <ul id="localmarketplaceitems" class="marketplaceitems">
+            <li><a href="#">Job1</a></li>
+            <li><a href="#">Job2</a></li>
+          </ul>
+        </td></tr>
+        </table>
+      </td>
+      <td>
+        <div id="productDetails">
+
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<div class="jobsearch" id="profile">
+  <h2>Profile</h2>
+  <table>
+    <tr>
+      <td>
+        <table>
+          <tr><td>
+              <h3>Marketplace history</h3>
+              <ul id="marketplacehistory" class="marketplaceitems">None</ul>
+          </td></tr>
+          <tr><td>
+            <h3>Starred Jobs</h3>
+            <ul id="starredjobs" class="marketplaceitems">
+              None
+            </ul>
+          </td></tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div id="about" class="connectwithcustomers" >
+  <h2>About</h2>
+  <table>
+    <tr>
+      <th>CONNECT WITH US</th>
+      <th></th>
+      <th>OTHER</th>
+    </tr>
+    <tr>
+      <td>Instagram</td>
+      <td></td>
+      <td>Help and Support</td>
+    </tr>
+    <tr>
+      <td>Twitter</td>
+      <td></td>
+      <td>Job Listings</td>
+    </tr>
+    <tr>
+      <td>Facebook</td>
+      <td></td>
+      <td>Marketplace</td>
+    </tr>
+    <tr>
+      <td>LinkedIn</td>
+      <td></td>
+      <td>Profile</td>
+    </tr>
+  </table>
+
+</div>
+
+
+
+
+    <script>
+      var jobs=[
+        {name:"Software Engineer", company:"Amazon", logo:"https://static.vecteezy.com/system/resources/previews/014/018/561/large_2x/amazon-logo-on-transparent-background-free-vector.jpg", location:"Vancouver",salary:100000,education:"University",seniority:"Entry Level", industry:"Tech", benefits:"Extended medical", starred:false},
+        {name:"Clinical Physician", company:"Fraser Health", logo:"images/briefcase.png", location:"Vancouver",salary:100000,education:"University",seniority:"Entry Level", industry:"Tech", benefits:"Extended medical", starred:false},
+        {name:"Software Engineer", company:"Amazon", logo:"images/briefcase.png", location:"Vancouver",salary:100000,education:"University",seniority:"Entry Level", industry:"Tech", benefits:"Extended medical", starred:false},
+        {name:"Software Engineer", company:"Amazon", logo:"images/briefcase.png", location:"Vancouver",salary:100000,education:"University",seniority:"Entry Level", industry:"Tech", benefits:"Extended medical", starred:false},
+        {name:"Software Engineer", company:"Amazon", logo:"images/briefcase.png", location:"Vancouver",salary:100000,education:"University",seniority:"Entry Level", industry:"Tech", benefits:"Extended medical", starred:false},
+        {name:"Software Engineer", company:"Amazon", logo:"images/briefcase.png", location:"Vancouver",salary:100000,education:"University",seniority:"Entry Level", industry:"Tech", benefits:"Extended medical", starred:false},
+        {name:"Software Engineer", company:"Amazon", logo:"images/briefcase.png", location:"Vancouver",salary:100000,education:"University",seniority:"Entry Level", industry:"Tech", benefits:"Extended medical", starred:false},
+        {name:"Software Engineer", company:"Amazon", logo:"images/briefcase.png", location:"Vancouver",salary:100000,education:"University",seniority:"Entry Level", industry:"Tech", benefits:"Extended medical", starred:false},
+        {name:"Software Engineer", company:"Amazon", logo:"images/briefcase.png", location:"Vancouver",salary:100000,education:"University",seniority:"Entry Level", industry:"Tech", benefits:"Extended medical", starred:false}
+      ];
+      var jobsById = {};
+
+      var marketplaceProducts = [
+        {productName:"Balance Board", company:"Monkey", imageUrl:"images/balanceboard.png", companyLogo:"images/monkey_logo.png", history:false},
+        {productName:"Artist Paints", company:"The Gallery", imageUrl:"images/paints.png", companyLogo:"images/artstore_512.png", history:false},
+        {productName:"Rolled Gelato", company:"Thai Affar", imageUrl:"images/thaiaffair.png", companyLogo:"images/thai-affair-logo-ig.jpeg", history:false},
+        {productName:"Elixirs and Tonics", company:"Moonshing Mama", companyLogo:"images/moonshine-mamas-3.jpg", imageUrl:"images/moonshinemama.png", history:false},
+        {productName:"Leather 5 Card Wallet-Natural", company:"Popov Leather", imageUrl:"https://cdn.shopify.com/s/files/1/0398/4317/products/5-card-wallet-natural-503592_1080x.jpg?v=1658149568", companyLogo:"https://marketplacebc.ca/wp-content/uploads/2021/08/PL-Sticker-white-bg-2.png", 
+history:false},
+        {productName:"Social Media Marketing", company:"Saasil Ichil Studio", imageUrl:"https://images.squarespace-cdn.com/content/v1/60ede08c4e62b53582541bc4/1632861987603-6BQB3NIJCZXZ6QCTMXDP/Saasil+Ichil+Design+%285%29.png?format=100w", companyLogo:"https://marketplacebc.ca/wp-content/uploads/2022/06/Saasil-Ichil-Logo-1-abde280aecc8d4a4400047c74f2c01bc.png", 
+history:false},
+        {productName:"Aerial Videography", company:"Poco Films", imageUrl:"https://pocofilms.com/wp-content/uploads/2023/04/video-production-services-videographer-video-editing-corporate-video-aerial-cinematography.jpg", companyLogo:"https://marketplacebc.ca/wp-content/uploads/2023/04/video-production-services-videographer-video-editing-corporate-v-0342074939309d1b964179e8f651de7a.png", 
+history:false},
+{productName:"Lemon Tumeric Elixr", company:"Moonshine Mama’s Kitchens Ltd", imageUrl:"https://cdn.shopify.com/s/files/1/0266/5322/9261/products/MoonShineMamas_OriginalTurmericElixir_1_1000x.png?v=1619477472", companyLogo:"https://marketplacebc.ca/wp-content/uploads/2022/06/Saasil-Ichil-Logo-1-abde280aecc8d4a4400047c74f2c01bc.png", 
+history:false},
+{productName:"Small Beeswax Wraps", company:"Nature Bee", imageUrl:"https://cdn.shopify.com/s/files/1/0020/7372/2978/products/1Small_BeeLovers.png?v=1681157673&width=750", companyLogo:"https://marketplacebc.ca/wp-content/uploads/2022/03/NatureBee_PrimaryLogo_Black-3-002d7c5c121f18094fb81c34a0b02706.png", 
+history:false},
+{productName:"Saltwater Taffy Assorted", company:"Maximillien Specialty Food Products", imageUrl:"images/saltwater-taffy-black-paper-pouch-100g.jpg", companyLogo:"https://marketplacebc.ca/wp-content/uploads/2021/08/LOGO-WWWMAXIMILLIEN-SPECIALTY-PRODUCTS_1-2019-161b867ce60c1648bb36079a5fd91710-2.jpg", 
+history:false},
+{productName:"Sabobatage Pop-Up  & Tournament", company:"Turquoise Goat", imageUrl:"https://tock-public.imgix.net/imagesprod/user_uploaded_images_v1/99e6a8f9-73f6-44c5-9b82-69b0800e87b9.png?ixlib=js-3.5.1&auto=format&fit=crop&crop=focalpoint&h=1200&w=2400", companyLogo:"https://marketplacebc.ca/wp-content/uploads/2022/12/TG_Logo_Secondary_Colour_B@4x-b3d8fa1d4d07119a87bb82e28e9153b2.png", 
+history:false}
+      ];
+      var marketplaceProductsById = {};
+
+      window.onscroll = function() {scrollFunction()};
+      
+      var navbar = document.getElementById("navbar");
+      var sticky = navbar.offsetTop;
+      
+      function scrollFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky")
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+ 
+      function loadJobs() {
+        var li = "";
+        for (i = 0; i < jobs.length; i++) {
+          li = li + '<li><span onclick="showJobDetails(' + i + ')">' + jobs[i].name + '</span></li>';
+
+          jobsById[i] = jobs[i];
+        }
+
+        var ul = document.getElementById("joblist");
+        ul.innerHTML = li;
+      }
+
+      loadJobs();
+      loadProducts();
+ 
+      function filterJobs() {
+          // Declare variables
+          var input, filter, ul, li, a, i, txtValue;
+          input = document.getElementById('jobsearchinput');
+          filter = input.value.toUpperCase();
+          ul = document.getElementById("joblist");
+          li = ul.getElementsByTagName('li');
+        
+          // Loop through all list items, and hide those who don't match the search query
+          for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("span")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+            } else {
+              li[i].style.display = "none";
+            }
+          }
+
+          document.getElementById("jobDetails").innerHTML="";
+      }
+
+      function showJobDetails(jobId) {
+        
+        var detailsHtml = "";
+
+        detailsHtml += '<div class="jobDetails"><table class="jobDetailsHeader"><tr><td>';
+        detailsHtml += "<table><tr><td><h2>";
+        detailsHtml += jobsById[jobId].name;
+        detailsHtml += '</h2></td><td><img class="starredImages"  src="images/' + (jobsById[jobId].starred ? "starred4.png" : "unstarred4.png") + '" onclick="toggleStar(' + jobId + ')">';
+        detailsHtml += "</td></tr></table>";
+
+        detailsHtml += "<table><tr><td>";
+        detailsHtml += '<img src="' + jobsById[jobId].logo + '" class="jobDetailsLogo"></td><td>';
+        detailsHtml += jobsById[jobId].company;
+        detailsHtml += "</td></tr></table>";
+
+        detailsHtml += "</td></tr></table>";
+
+        detailsHtml += '<div class="jobDescription"><table><tr>';
+        detailsHtml += "<td><h3>Details</h3><ul>";
+        detailsHtml += "<li>Location: " + jobsById[jobId].location + "</li>";
+        detailsHtml += "<li>Salary: " + jobsById[jobId].salary.toLocaleString('us-US', { style: 'currency', currency: 'USD' }); + "</li>"; 
+        detailsHtml += "<li>Education: " + jobsById[jobId].education + "</li>"; 
+        detailsHtml += "<li>Seniority: " + jobsById[jobId].seniority + "</li>"; 
+        detailsHtml += "<li>Industry: " + jobsById[jobId].industry + "</li>"; 
+        detailsHtml += "<li>Benefits: " + jobsById[jobId].benefits + "</li>"; 
+        detailsHtml += "</ul></td></tr></table></div></div>";
+        
+        var detailsDiv = document.getElementById("jobDetails");
+        detailsDiv.innerHTML=detailsHtml;
+      }
+
+      function toggleStar(jobId) {
+        jobsById[jobId].starred = !jobsById[jobId].starred;
+        showJobDetails(jobId);
+        showStarredJobs();
+      }
+
+      function showStarredJobs() {
+        var starredHtml = "";
+        
+        for (i = 0; i < jobs.length; i++) {
+          if(jobs[i].starred === true)
+          {
+            starredHtml += '<li><span class="starredjobname">' + jobs[i].name + '</span><span class="starredcompany"> at ' + jobs[i].company + '</span></li>';
+          }
+        }
+        
+        var starredJobsDiv = document.getElementById("starredjobs");
+        starredJobsDiv.innerHTML=starredHtml;
+      }
+
+      function loadProducts() {
+        var localLi = "";
+        var popularLi = "";
+        var num = 12;
+        for (i = 0; i < marketplaceProducts.length && i < num; i++) {
+          var li = '<li><span onclick="showProductDetails(' + i + ')">';
+            li += '<img src="' + marketplaceProducts[i].imageUrl + '" class="productlistimage"><div class="productlisttitle">';
+              li += marketplaceProducts[i].productName + '</div></span></li>';
+          if(i < num/2)
+          {
+            localLi = localLi + li;
+          }
+          else
+          {
+            popularLi = popularLi + li;
+          }
+
+          marketplaceProductsById[i] = marketplaceProducts[i];
+        }
+
+        var localUl = document.getElementById("localmarketplaceitems");
+        localUl.innerHTML = localLi;
+
+        var popularUl = document.getElementById("popularmarketplaceitems");
+        popularUl.innerHTML = popularLi;
+      }
+
+      function filterProducts() {
+          filterProductSection("localmarketplaceitems");
+          filterProductSection("popularmarketplaceitems");
+          
+      }
+
+      function filterProductSection(elementId) {
+          // Declare variables
+          var input, filter, ul, li, a, i, txtValue;
+          input = document.getElementById('productsearchinput');
+          filter = input.value.toUpperCase();
+          ul = document.getElementById(elementId);
+          li = ul.getElementsByTagName('li');
+        
+          // Loop through all list items, and hide those who don't match the search query
+          for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("span")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+            } else {
+              li[i].style.display = "none";
+            }
+          }
+      }
+
+      function showProductDetails(productId) {
+        
+        var detailsHtml = "";
+
+        //detailsHtml += '<table class="productDetailsHeader"><tr><td>';
+        detailsHtml += '<div class="productDetails"><table><tr><td><h2>';
+        detailsHtml += marketplaceProductsById[productId].productName;
+        detailsHtml += '</h2><div class="company"><table><tr><td>By: ' + marketplaceProductsById[productId].company + '</td><td><img class="companyLogo" src="' + marketplaceProductsById[productId].companyLogo + '"></td></tr></table></div>';
+        detailsHtml += '<img class="marketplaceProductDetailImage" src="' + marketplaceProductsById[productId].imageUrl + '">';
+        detailsHtml += "</td></tr></table></div>";
+/*
+        detailsHtml += "<table><tr><td>";
+        detailsHtml += '<img src="' + jobsById[productId].logo + '" class="jobDetailsLogo"></td><td>';
+        detailsHtml += jobsById[productId].company;
+        detailsHtml += "</td></tr></table>";
+
+        detailsHtml += "</td></tr></table>";
+
+        detailsHtml += "<table><tr>";
+        detailsHtml += "<td>Description:<ul>";
+        detailsHtml += "<li>" + jobsById[productId].location + "</li>";
+        detailsHtml += "<li>" + jobsById[productId].salary + "</li>"; 
+        detailsHtml += "<li>" + jobsById[productId].education + "</li>"; 
+        detailsHtml += "<li>" + jobsById[productId].seniority + "</li>"; 
+        detailsHtml += "<li>" + jobsById[productId].industry + "</li>"; 
+        detailsHtml += "<li>" + jobsById[productId].benefits + "</li>"; 
+        detailsHtml += "</ul></td></tr></table>";*/
+        
+        var detailsDiv = document.getElementById("productDetails");
+        detailsDiv.innerHTML=detailsHtml;
+
+        marketplaceProductsById[productId].history = true;
+        showProductHistory();
+      }
+
+      function showProductHistory() {
+        var historyHtml = "";
+        
+        for (i = 0; i < marketplaceProducts.length; i++) {
+          if(marketplaceProducts[i].history === true)
+          {
+            historyHtml += '<li><span><img src="' + marketplaceProducts[i].imageUrl + '" class="productlistimage"><div class="productlisttitle">';
+            historyHtml += marketplaceProducts[i].productName + '</div></span></li>';
+          }
+        }
+        
+        var productHistoryDiv = document.getElementById("marketplacehistory");
+        productHistoryDiv.innerHTML=historyHtml;
+      }
+
+  </script>
+
+</body>
+</html>
