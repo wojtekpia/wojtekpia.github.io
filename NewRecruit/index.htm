@@ -83,7 +83,11 @@ body {
 
 .welcomecontentbackground::before {
   content: "";
-  background-image: url('images/westend2.jpg');
+  /*background:linear-gradient(0deg, rgba(185, 194, 196, .5), rgba(185, 194, 196, .5)), url('images/vancouver4.jpg');*/
+ /* background:linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3)), url('images/vancouver4.jpg');*/
+
+  background-image: url('images/vancouver4.jpg');
+
   background-size: 100%;
   background-repeat: no-repeat;
 
@@ -92,7 +96,7 @@ body {
   right: 0px;
   bottom: 0px;
   left: 0px;
-  opacity: 0.75;
+  opacity: 0.90;
 }
 
 .welcomecontent {
@@ -158,12 +162,20 @@ body {
   padding-bottom: 350px;
 }
 
+.entrepreneurs {
+  padding:20px;
+}
+
 .entrepreneurs:hover span {
   display: none;
 }
 
-.entrepreneurs:hover:before {
+.entrepreneurs:hover:after {
   content: "Business owners can list and sell their products easily and at no cost.";
+}
+
+.employers {
+  padding:20px;
 }
 
 .employers:hover span {
@@ -174,11 +186,15 @@ body {
   content: "Employers can advertise their job listings to a community of applicants easily and at no cost.";
 }
 
+.applicants {
+  padding:20px;
+}
+
 .applicants:hover span {
   display: none;
 }
 
-.applicants:hover:before {
+.applicants:hover:after {
   content: "Job applicants can select desirable listings of interest.";
 }
 
@@ -208,9 +224,14 @@ body {
   color: #898989;
 }
 
+.searchlocaljoblistings {
+  font-size: 150%;
+  padding-bottom: 20px;
+}
+
 .connectwithcustomersmain {
   width:250px;
-  padding-right:60px;
+  padding-right:250px;
 }
 
 .ourpurpose {
@@ -389,7 +410,7 @@ body {
     <table class="whoitsforcontent">
       <tr>
         <td>
-          <div class="entrepreneurs"><br><br><br><span>Entrepreneurs</span></div>
+          <div class="entrepreneurs"><br><span><br><br>Entrepreneurs</span></div>
         </td>
         <td class="whoitsforspacer"></td>
         <td>
@@ -397,7 +418,7 @@ body {
         </td>
         <td class="whoitsforspacer"></td>
         <td>
-          <div class="applicants"><br><br><br><span>Applicants</span></div>
+          <div class="applicants"><br><span><br><br>Applicants</span></div>
         </td>
       </tr>
     </table>
@@ -409,7 +430,7 @@ body {
         <td>
           <div class="connectwithcustomersmain">
               <img src="images/bag1.png" width="200px"/>
-              <h2>Connect With Customers Near You</h2>
+              <div class="searchlocaljoblistings">Connect With Customers Near You</div>
               <div class="ourpurposelinks"><a href="#profile">Go to Profile</a></div>
           </div>
         </td>
@@ -431,7 +452,7 @@ body {
                       <img src="images/bag2.png" width="200px"/>
                     </td>
                     <td>
-                      <h2>Search Local Job Listings</h2>
+                      <div class="searchlocaljoblistings">Search Local Job Listings</div>
                       <div class="ourpurposelinks"> <a href="#jobs">Find Openings</a></div>
                     </td>
                   </tr>
