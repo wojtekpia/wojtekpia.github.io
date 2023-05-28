@@ -73,7 +73,7 @@ body {
 
 .welcomecontentbackground {
   width:100%;
-  height:75vh;
+  height:550px;
   vertical-align: middle;
   text-align: center;
   position: relative;
@@ -83,12 +83,12 @@ body {
 
 .welcomecontentbackground::before {
   content: "";
-  /*background:linear-gradient(0deg, rgba(185, 194, 196, .5), rgba(185, 194, 196, .5)), url('images/vancouver4.jpg');*/
- /* background:linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3)), url('images/vancouver4.jpg');*/
+  background:linear-gradient(0deg, rgba(255, 255, 255, 0.482), rgba(255, 252, 252, 0.463)), url('images/vancouver4.jpg');
+ /* background:linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3)), url('images/vancouver4.jpg'); */
 
-  background-image: url('images/vancouver4.jpg');
+/*  background-image: url('images/vancouver4.jpg');*/
 
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
 
   position: absolute;
@@ -102,10 +102,11 @@ body {
 .welcomecontent {
   /* TODO: don't like how this moves when window is resized*/
   position: absolute;
-  top: 50%; left: 50%;
+  top: 70%; left: 50%;
   transform: translate(-50%,-50%);
   height: 60%;
   font-size:30pt;
+  color:rgb(67, 64, 64);
 
 }
 
@@ -402,7 +403,7 @@ body {
 
 
   <div class="welcomecontentbackground">
-    <div class="welcomecontent">Local Jobs and Business</div>
+    <div class="welcomecontent">Local Jobs and Business in the Lower Mainland, BC</div>
   </div>
 
   <div class="whoitsfor">
