@@ -215,6 +215,22 @@ body {
 
 }
 
+.learnmore a {
+  border-radius: 12px;
+  text-decoration: none;
+  background: white;
+  padding: 10px;
+  width: fit-content;
+  text-align: center;
+  color: #898989;
+  font-size:50%;
+}
+
+.visitwebsite a {
+  text-decoration: none;
+  color:black;
+}
+
 .ourpurposelinks a {
   border-radius: 12px;
   text-decoration: none;
@@ -264,6 +280,8 @@ body {
 
 .joblist {
   width: 300px;
+  height: 600px; 
+  overflow-y: scroll;
 }
 
 #joblist {
@@ -327,7 +345,7 @@ body {
 
 .marketplaceitems {
   list-style-type: none;
-  width:400px;
+  width:700px;
 }
 
 .marketplaceitems li {
@@ -335,10 +353,12 @@ body {
 }
 
 .productlistimage {
-  width:100px;
-  height:100px;
+  width:200px;
+  height:200px;
   padding-left:10px;
   padding-right:10px;
+  border-radius: 20%;
+
 }
 
 .productlisttitle {
@@ -366,7 +386,7 @@ body {
 
 .companyLogo
 {
-  height:20px;
+  height:70px;
 }
 
 .starredjobname {
@@ -403,7 +423,12 @@ body {
 
 
   <div class="welcomecontentbackground">
-    <div class="welcomecontent">Local Jobs and Business in the Lower Mainland, BC</div>
+    <div class="welcomecontent">
+      <div>Local Jobs and Business in the Lower Mainland, BC</div>
+      <div class="learnmore"> <a href="#connectwithcustomers">Learn More</a></div>
+    </div>
+    
+
   </div>
 
   <div class="whoitsfor">
@@ -425,14 +450,14 @@ body {
     </table>
   </div>
 
-  <div class="connectwithcustomers">
+  <div class="connectwithcustomers" id="connectwithcustomers">
     <table>
       <tr>
         <td>
           <div class="connectwithcustomersmain">
               <img src="images/bag1.png" width="200px"/>
               <div class="searchlocaljoblistings">Connect With Customers Near You</div>
-              <div class="ourpurposelinks"><a href="#profile">Go to Profile</a></div>
+              <div class="ourpurposelinks"><a href="#profile">Go to Marketplace</div>
           </div>
         </td>
         <td >
@@ -475,11 +500,13 @@ body {
 
     <table>
       <tr>
-        <td class="joblist">
-          <ul id="joblist">
-            <li><a href="#">Job1</a></li>
-            <li><a href="#">Job2</a></li>
-          </ul>
+        <td>
+          <div class="joblist">
+            <ul id="joblist">
+              <li><a href="#">Job1</a></li>
+              <li><a href="#">Job2</a></li>
+            </ul>
+        </div>
         </td>
         <td>
           <div id="jobDetails">
@@ -621,24 +648,18 @@ body {
       var jobsById = {};
 
       var marketplaceProducts = [
-        {productName:"Balance Board", company:"Monkey", imageUrl:"images/balanceboard.png", companyLogo:"images/monkey_logo.png", history:false},
-        {productName:"Artist Paints", company:"The Gallery", imageUrl:"images/paints.png", companyLogo:"images/artstore_512.png", history:false},
-        {productName:"Rolled Gelato", company:"Thai Affar", imageUrl:"images/thaiaffair.png", companyLogo:"images/thai-affair-logo-ig.jpeg", history:false},
-        {productName:"Elixirs and Tonics", company:"Moonshing Mama", companyLogo:"images/moonshine-mamas-3.jpg", imageUrl:"images/moonshinemama.png", history:false},
-        {productName:"Leather 5 Card Wallet-Natural", company:"Popov Leather", imageUrl:"https://cdn.shopify.com/s/files/1/0398/4317/products/5-card-wallet-natural-503592_1080x.jpg?v=1658149568", companyLogo:"https://marketplacebc.ca/wp-content/uploads/2021/08/PL-Sticker-white-bg-2.png", 
-history:false},
-        {productName:"Social Media Marketing", company:"Saasil Ichil Studio", imageUrl:"https://images.squarespace-cdn.com/content/v1/60ede08c4e62b53582541bc4/1632861987603-6BQB3NIJCZXZ6QCTMXDP/Saasil+Ichil+Design+%285%29.png?format=100w", companyLogo:"https://marketplacebc.ca/wp-content/uploads/2022/06/Saasil-Ichil-Logo-1-abde280aecc8d4a4400047c74f2c01bc.png", 
-history:false},
-        {productName:"Aerial Videography", company:"Poco Films", imageUrl:"https://pocofilms.com/wp-content/uploads/2023/04/video-production-services-videographer-video-editing-corporate-video-aerial-cinematography.jpg", companyLogo:"https://marketplacebc.ca/wp-content/uploads/2023/04/video-production-services-videographer-video-editing-corporate-v-0342074939309d1b964179e8f651de7a.png", 
-history:false},
-{productName:"Lemon Tumeric Elixr", company:"Moonshine Mama’s Kitchens Ltd", imageUrl:"https://cdn.shopify.com/s/files/1/0266/5322/9261/products/MoonShineMamas_OriginalTurmericElixir_1_1000x.png?v=1619477472", companyLogo:"https://marketplacebc.ca/wp-content/uploads/2022/06/Saasil-Ichil-Logo-1-abde280aecc8d4a4400047c74f2c01bc.png", 
-history:false},
-{productName:"Small Beeswax Wraps", company:"Nature Bee", imageUrl:"https://cdn.shopify.com/s/files/1/0020/7372/2978/products/1Small_BeeLovers.png?v=1681157673&width=750", companyLogo:"https://marketplacebc.ca/wp-content/uploads/2022/03/NatureBee_PrimaryLogo_Black-3-002d7c5c121f18094fb81c34a0b02706.png", 
-history:false},
-{productName:"Saltwater Taffy Assorted", company:"Maximillien Specialty Food Products", imageUrl:"images/saltwater-taffy-black-paper-pouch-100g.jpg", companyLogo:"https://marketplacebc.ca/wp-content/uploads/2021/08/LOGO-WWWMAXIMILLIEN-SPECIALTY-PRODUCTS_1-2019-161b867ce60c1648bb36079a5fd91710-2.jpg", 
-history:false},
-{productName:"Sabobatage Pop-Up  & Tournament", company:"Turquoise Goat", imageUrl:"https://tock-public.imgix.net/imagesprod/user_uploaded_images_v1/99e6a8f9-73f6-44c5-9b82-69b0800e87b9.png?ixlib=js-3.5.1&auto=format&fit=crop&crop=focalpoint&h=1200&w=2400", companyLogo:"https://marketplacebc.ca/wp-content/uploads/2022/12/TG_Logo_Secondary_Colour_B@4x-b3d8fa1d4d07119a87bb82e28e9153b2.png", 
-history:false}
+        {productName:"Balance Board", company:"Monkey", url:"https://monkeybalance.com.ua/", imageUrl:"images/balanceboard.png", companyLogo:"images/monkey_logo.png", history:false},
+        {productName:"Artist Paints", company:"The Gallery", url:"https://foursquare.com/v/the-gallery-framing--art-supplies/4fcd28d0e4b09e8af94c000d", imageUrl:"images/paints.png", companyLogo:"images/artstore_512.png", history:false},
+        {productName:"Rolled Gelato", company:"Thai Affar", url:"https://www.thaiaffairgelato.com/", imageUrl:"images/thaiaffair.png", companyLogo:"images/thai-affair-logo-ig.jpeg", history:false},
+        {productName:"Elixirs and Tonics", company:"Moonshing Mama", url:"https://moonshinemamas.ca/", companyLogo:"images/moonshine-mamas-3.jpg", imageUrl:"images/moonshinemama.png", history:false},
+        {productName:"Leather 5 Card Wallet-Natural", company:"Popov Leather", url:"https://www.popovleather.com/", imageUrl:"https://cdn.shopify.com/s/files/1/0398/4317/products/5-card-wallet-natural-503592_1080x.jpg?v=1658149568", companyLogo:"https://marketplacebc.ca/wp-content/uploads/2021/08/PL-Sticker-white-bg-2.png", history:false},
+        {productName:"Social Media Marketing", company:"Saasil Ichil Studio", url:"https://www.saasilichilstudio.com/", imageUrl:"https://images.squarespace-cdn.com/content/v1/60ede08c4e62b53582541bc4/1632861987603-6BQB3NIJCZXZ6QCTMXDP/Saasil+Ichil+Design+%285%29.png?format=100w", companyLogo:"https://marketplacebc.ca/wp-content/uploads/2022/06/Saasil-Ichil-Logo-1-abde280aecc8d4a4400047c74f2c01bc.png", history:false},
+        {productName:"Aerial Videography", company:"Poco Films", url:"https://pocofilms.com/", imageUrl:"https://pocofilms.com/wp-content/uploads/2023/04/video-production-services-videographer-video-editing-corporate-video-aerial-cinematography.jpg", companyLogo:"https://marketplacebc.ca/wp-content/uploads/2023/04/video-production-services-videographer-video-editing-corporate-v-0342074939309d1b964179e8f651de7a.png", history:false},
+        {productName:"Lemon Tumeric Elixr", company:"Moonshine Mama’s Kitchens Ltd", url:"https://moonshinemamas.ca/", imageUrl:"https://cdn.shopify.com/s/files/1/0266/5322/9261/products/MoonShineMamas_OriginalTurmericElixir_1_1000x.png?v=1619477472", companyLogo:"images/moonshine-mamas-3.jpg", history:false},
+        {productName:"Small Beeswax Wraps", company:"Nature Bee", url:"https://www.naturebeewraps.ca/", imageUrl:"https://cdn.shopify.com/s/files/1/0020/7372/2978/products/1Small_BeeLovers.png?v=1681157673&width=750", companyLogo:"https://marketplacebc.ca/wp-content/uploads/2022/03/NatureBee_PrimaryLogo_Black-3-002d7c5c121f18094fb81c34a0b02706.png", history:false},
+        {productName:"Saltwater Taffy Assorted", company:"Maximillien Specialty Food Products", url:"https://maximillien.com/", imageUrl:"images/saltwater-taffy-black-paper-pouch-100g.jpg", companyLogo:"https://marketplacebc.ca/wp-content/uploads/2021/08/LOGO-WWWMAXIMILLIEN-SPECIALTY-PRODUCTS_1-2019-161b867ce60c1648bb36079a5fd91710-2.jpg", history:false},
+        {productName:"Sabobatage Pop-Up  & Tournament", company:"Turquoise Goat", url:"https://turquoisegoat.com/", imageUrl:"https://tock-public.imgix.net/imagesprod/user_uploaded_images_v1/99e6a8f9-73f6-44c5-9b82-69b0800e87b9.png?ixlib=js-3.5.1&auto=format&fit=crop&crop=focalpoint&h=1200&w=2400", companyLogo:"https://marketplacebc.ca/wp-content/uploads/2022/12/TG_Logo_Secondary_Colour_B@4x-b3d8fa1d4d07119a87bb82e28e9153b2.png", history:false},
+        {productName:"250 Pendant", company:"Mike Randall Design", url:"https://www.mikerandalldesign.ca/", imageUrl:"https://images.squarespace-cdn.com/content/v1/61b10455f693ae3184d69b88/1638990961453-TPOM5VIR5X76F277BSDF/2020+Pendant+Bedroom+scene+%28no+logo%29.jpg?format=1500w", companyLogo:"images/miker.png", history:false}
       ];
       var marketplaceProductsById = {};
 
@@ -803,7 +824,7 @@ history:false}
         //detailsHtml += '<table class="productDetailsHeader"><tr><td>';
         detailsHtml += '<div class="productDetails"><table><tr><td><h2>';
         detailsHtml += marketplaceProductsById[productId].productName;
-        detailsHtml += '</h2><div class="company"><table><tr><td>By: ' + marketplaceProductsById[productId].company + '</td><td><img class="companyLogo" src="' + marketplaceProductsById[productId].companyLogo + '"></td></tr></table></div>';
+        detailsHtml += '</h2><div class="company"><table><tr><td>By: ' + marketplaceProductsById[productId].company + '</td><td><img class="companyLogo" src="' + marketplaceProductsById[productId].companyLogo + '"></td><td><div class="visitwebsite"><a href="' + marketplaceProductsById[productId].url + '">Visit Website</a></div></td></tr></table></div>';
         detailsHtml += '<img class="marketplaceProductDetailImage" src="' + marketplaceProductsById[productId].imageUrl + '">';
         detailsHtml += "</td></tr></table></div>";
 /*
